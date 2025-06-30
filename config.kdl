@@ -365,6 +365,8 @@ binds {
     Mod+Prior { spawn "playerctl" "--player=spotify" "previous"; }
     Mod+Next { spawn "playerctl" "--player=spotify" "play-pause"; }
     Mod+End { spawn "playerctl" "--player=spotify" "next"; }
+    Mod+BackSpace { spawn "~/.config/hypr/Scripts/spotify_position.sh"; }
+    Mod+BackSlash { spawn "~/.config/hypr/Scripts/spotify_songinfo.sh"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
