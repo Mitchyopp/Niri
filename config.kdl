@@ -368,6 +368,11 @@ binds {
     Mod+BackSpace { spawn "~/.config/hypr/Scripts/spotify_position.sh"; }
     Mod+BackSlash { spawn "~/.config/hypr/Scripts/spotify_songinfo.sh"; }
 
+    // Custom binds
+    Mod+Shift+3 { spawn "notify-send" "hi"; }
+    Mod+Shift+1 { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
+    Mod+Shift+W { spawn "waypaper"; }
+
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
