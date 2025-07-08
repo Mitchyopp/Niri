@@ -73,9 +73,7 @@ layout {
 
 spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "swww init"
-spawn-at-startup "swww restore"
-spawn-at-startup "waypaper --restore"
+spawn-at-startup "swww init && sleep 1 && waypaper --restore"
 spawn-at-startup "pactl set-card-profile bluez_card.00_A4_1C_40_CA_57 a2dp-sink" 
 
 environment {
@@ -97,11 +95,13 @@ window-rule {
 window-rule {
   match app-id="ghostty"
   open-floating true
+  opacity 0.95
 }
 
 window-rule {
   match app-id="Nautilus"
   open-floating true
+  block-out-from "screencast"
 }
 
 window-rule {
@@ -126,6 +126,10 @@ binds {
     Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+E hotkey-overlay-title="Open Nautilus" { spawn "nautilus"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+
+    // Custom script
+    Mod+Ctrl+Delete { spawn "~/Scripts/Niri/focused.sh"; } 
+
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
