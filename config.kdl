@@ -74,6 +74,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swww init"
+spawn-at-startup "swww restore"
 spawn-at-startup "waypaper --restore"
 spawn-at-startup "pactl set-card-profile bluez_card.00_A4_1C_40_CA_57 a2dp-sink" 
 
@@ -111,7 +112,7 @@ window-rule {
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Mod+Q hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
@@ -127,7 +128,7 @@ binds {
     Mod+Shift+1 { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
     Mod+Shift+W { spawn "waypaper"; }
     Mod+O repeat=false { toggle-overview; }
-    Mod+Q { close-window; }
+    Mod+C { close-window; }
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
     Mod+Up    { focus-window-up; }
@@ -212,7 +213,7 @@ binds {
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
     Mod+Ctrl+F { expand-column-to-available-width; }
-    Mod+C { center-column; }
+    Mod+T { center-column; }
     Mod+Ctrl+C { center-visible-columns; }
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
