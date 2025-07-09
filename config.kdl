@@ -21,14 +21,14 @@ input {
 }
 
 output "HDMI-A-1" {
-  mode "2560x1440@144.030"
+  mode "2560x1440@143.912"
   scale 1
   transform "normal"
   position x=0 y=0
 }
 
 output "DP-3" {
-    mode "2560x1440@144.030"
+    mode "2560x1440@143.912"
     scale 1
     transform "normal"
     position x=2560 y=0
@@ -71,9 +71,15 @@ layout {
     }
 }
 
+spawn-at-startup "zen-browser"
+spawn-at-startup "prismlauncher"
+spawn-at-startup "steam"
+spawn-at-startup "spotify"
+spawn-at-startup "vesktop"
 spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "swww init && sleep 1 && waypaper --restore"
+spawn-at-startup "swww init"
+spawn-at-startup "~/Scripts/startup.sh"
 spawn-at-startup "pactl set-card-profile bluez_card.00_A4_1C_40_CA_57 a2dp-sink" 
 
 environment {
@@ -87,9 +93,46 @@ screenshot-path "~/Pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
 }
 
+workspace "browser" {
+  open-on-output "HDMI-A-1"
+}
+workspace "games" {
+  open-on-output "HDMI-A-1"
+}
+workspace "music" {
+  open-on-output "HDMI-A-1"
+}
+workspace "discord" {
+  open-on-output "DP-3"
+}
+
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+  match app-id=r#"^org\.wezfurlong\.wezterm$"#
+  default-column-width { proportion 0.5; }
+}
+
+window-rule {
+  match app-id="zen"
+  open-on-workspace "browser"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="org.prismlauncher.PrismLauncher"
+  open-on-workspace "games"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="steam"
+  open-on-workspace "games"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="Spotify"
+  open-on-workspace "music"
+  open-maximized true
 }
 
 window-rule {
@@ -104,6 +147,11 @@ window-rule {
   block-out-from "screencast"
 }
 
+window-rule {
+  match app-id="vesktop"
+  open-on-workspace "discord"
+  open-maximized true
+}
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
@@ -129,6 +177,8 @@ binds {
 
     // Custom script
     Mod+Ctrl+Delete { spawn "~/Scripts/Niri/focused.sh"; } 
+    Mod+T { spawn "~/Scripts/translate-simple.sh"; }
+    Mod+Shift+T { spawn "~/Scripts/translate.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
@@ -138,7 +188,7 @@ binds {
     Mod+Next { spawn "playerctl" "--player=spotify" "play-pause"; }
     Mod+End { spawn "playerctl" "--player=spotify" "next"; }
     Mod+BackSpace { spawn "~/.config/hypr/Scripts/spotify_position.sh"; }
-    Mod+BackSlash { spawn "~/.config/hypr/Scripts/spotify_songinfo.sh"; }
+    Mod+BackSlash { spawn "~/Scripts/spotify.sh"; }
     Mod+Shift+3 { spawn "notify-send" "hi"; }
     Mod+Shift+1 { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
     Mod+Shift+W { spawn "waypaper"; }
@@ -228,7 +278,7 @@ binds {
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
     Mod+Ctrl+F { expand-column-to-available-width; }
-    Mod+T { center-column; }
+    // Mod+T { center-column; }
     Mod+Ctrl+C { center-visible-columns; }
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
