@@ -91,6 +91,7 @@ prefer-no-csd
 screenshot-path "~/Pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
+  // Woohoo
 }
 
 workspace "browser" {
@@ -166,6 +167,10 @@ window-rule {
 /-window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+}
+
+hotkey-overlay {
+  skip-at-startup
 }
 
 binds {
