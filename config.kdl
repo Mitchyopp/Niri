@@ -10,7 +10,6 @@ input {
     }
 
     touchpad {
-        off
     }
 
     mouse {
