@@ -81,6 +81,7 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swww init"
 spawn-at-startup "~/Scripts/startup.sh"
 spawn-at-startup "pactl set-card-profile bluez_card.00_A4_1C_40_CA_57 a2dp-sink" 
+spawn-at-startup "fcitx5 -d &"
 
 environment {
   DISPLAY ":0"
@@ -92,6 +93,21 @@ screenshot-path "~/Pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
   // Woohoo
+  workspace-switch {
+      spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+  }
+
+  horizontal-view-movement {
+      spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+  }
+
+  window-movement {
+      spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+  }
+
+  window-resize {
+      spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+  }
 }
 
 workspace "browser" {
@@ -107,15 +123,30 @@ workspace "discord" {
   open-on-output "DP-3"
 }
 
+workspace "recording" {
+  open-on-output "DP-3"
+}
+
 window-rule {
   match app-id=r#"^org\.wezfurlong\.wezterm$"#
   default-column-width { proportion 0.5; }
 }
 
+
+window-rule {
+  match is-active=false
+  opacity 0.9
+}
 window-rule {
   match app-id="zen"
   open-on-workspace "browser"
+  //block-out-from "screen-capture"
   open-maximized true
+}
+
+window-rule {
+  match app-id="zen" title="YouTube"
+  block-out-from "screen-capture"
 }
 
 window-rule {
@@ -152,6 +183,18 @@ window-rule {
   match app-id="vesktop"
   open-on-workspace "discord"
   open-maximized true
+  opacity 0.99
+}
+
+window-rule {
+  match app-id="com.obsproject.Studio"
+  open-on-workspace "recording"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="waypaper"
+  open-floating true
 }
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
