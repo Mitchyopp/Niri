@@ -193,6 +193,11 @@ window-rule {
 }
 
 window-rule {
+  match app-id="superProductivity"
+  open-maximized true
+}
+
+window-rule {
   match app-id="waypaper"
   open-floating true
 }
