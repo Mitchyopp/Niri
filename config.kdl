@@ -109,13 +109,13 @@ animations {
 }
 
 workspace "browser" {
-  open-on-output "HDMI-A-1"
+  open-on-output "DP-2"
 }
 workspace "games" {
-  open-on-output "HDMI-A-1"
+  open-on-output "DP-2"
 }
 workspace "music" {
-  open-on-output "HDMI-A-1"
+  open-on-output "DP-2"
 }
 workspace "discord" {
   open-on-output "DP-3"
