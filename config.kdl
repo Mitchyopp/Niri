@@ -68,7 +68,7 @@ layout {
     }
 }
 
-spawn-at-startup "zen-browser"
+spawn-at-startup "zen"
 spawn-at-startup "mako"
 spawn-at-startup "prismlauncher"
 spawn-at-startup "steam"
@@ -136,19 +136,19 @@ window-rule {
   opacity 0.9
 }
 window-rule {
-  match app-id="zen"
+  match app-id="zen-browser"
   open-on-workspace "browser"
   //block-out-from "screen-capture"
   open-maximized true
 }
 
 window-rule {
-  match app-id="zen" title="YouTube"
+  match app-id="zen-browser" title="YouTube"
   block-out-from "screen-capture"
 }
 
 window-rule {
-  match app-id="org.prismlauncher.PrismLauncher"
+  match app-id="PrismLauncher"
   open-on-workspace "games"
   open-maximized true
 }
