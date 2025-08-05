@@ -17,6 +17,9 @@ input {
 
     trackpoint {
     }
+
+    focus-follows-mouse
+    warp-mouse-to-focus mode="center-xy"
 }
 
 output "DP-2" {
@@ -42,10 +45,11 @@ layout {
 
     default-column-width { proportion 0.5; }
     focus-ring {
-        width 4
-        active-color "#9e09de"
-        inactive-color "#505050"
-        active-gradient from="#9e09de" to="#ffffff" angle=45
+        width 3
+        //active-color "#9e09de"
+        //inactive-color "#505050"
+        active-gradient from="#f29ecb" to="#ffffff" angle=90
+        urgent-color "#ff4e78"
     }
 
     border {
@@ -68,17 +72,20 @@ layout {
     }
 }
 
+spawn-at-startup "zen-browser"
+spawn-at-startup "Zen-browser"
 spawn-at-startup "zen"
 spawn-at-startup "mako"
 spawn-at-startup "prismlauncher"
+spawn-at-startup "PrismLauncher"
 spawn-at-startup "steam"
 spawn-at-startup "spotify"
 spawn-at-startup "vesktop"
-spawn-at-startup "waybar"
+// spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swww init"
 spawn-at-startup "~/Scripts/startup.sh"
-spawn-at-startup "pactl set-card-profile bluez_card.00_A4_1C_40_CA_57 a2dp-sink" 
+spawn-at-startup "pactl set-card-profile bluez_card.00_A4_1C_40_CA_57 a2dp-sink"
 spawn-at-startup "fcitx5 -d &"
 
 environment {
@@ -90,7 +97,8 @@ prefer-no-csd
 screenshot-path "~/Pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
-  // Woohoo
+	off
+																	 // Woohoo
   workspace-switch {
       spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
   }
@@ -135,15 +143,16 @@ window-rule {
   match is-active=false
   opacity 0.9
 }
+
 window-rule {
-  match app-id="zen-browser"
+  match app-id="zen"
   open-on-workspace "browser"
   //block-out-from "screen-capture"
   open-maximized true
 }
 
 window-rule {
-  match app-id="zen-browser" title="YouTube"
+  match app-id="zen" title="YouTube"
   block-out-from "screen-capture"
 }
 
@@ -227,9 +236,10 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Custom script
-    Mod+Ctrl+Delete { spawn "~/Scripts/Niri/focused.sh"; } 
+    Mod+Ctrl+Delete { spawn "~/Scripts/Niri/focused.sh"; }
     Mod+T { spawn "~/Scripts/translate-simple.sh"; }
     Mod+Shift+T { spawn "~/Scripts/translate.sh"; }
+		Ctrl+BackSlash { spawn "~/Scripts/time.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
