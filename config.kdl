@@ -53,10 +53,10 @@ layout {
     }
 
     border {
-        off
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        width 2
+        // active-color "#ffc87f"
+        // inactive-color "#505050"
+        active-gradient from="#f29ecb" to="#ffffff" angle=90
         urgent-color "#9b0000"
     }
 
