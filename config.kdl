@@ -347,6 +347,7 @@ binds {
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
     Mod+Delete { screenshot; }
+		Mod+Shift+Delete { spawn "~/Scripts/satty.sh"; }
     Mod+tab { screenshot-screen; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     // Mod+Shift+E { quit; }
