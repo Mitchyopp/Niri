@@ -74,7 +74,7 @@ layout {
 }
 
 spawn-at-startup "zen-browser"
-spawn-at-startup "Zen-browser"
+// spawn-at-startup "Zen-browser"
 spawn-at-startup "zen"
 spawn-at-startup "mako"
 spawn-at-startup "prismlauncher"
