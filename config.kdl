@@ -18,8 +18,8 @@ input {
     trackpoint {
     }
 
-    focus-follows-mouse
-    warp-mouse-to-focus mode="center-xy"
+    // focus-follows-mouse
+    // warp-mouse-to-focus mode="center-xy"
 }
 
 output "DP-2" {
