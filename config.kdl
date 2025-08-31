@@ -73,11 +73,11 @@ layout {
     }
 }
 
+spawn-at-startup "com.obsproject.Studio"
 spawn-at-startup "zen-browser"
-// spawn-at-startup "Zen-browser"
-spawn-at-startup "zen"
+// spawn-at-startup "zen" // test
 spawn-at-startup "mako"
-spawn-at-startup "prismlauncher"
+// spawn-at-startup "prismlauncher" // test
 spawn-at-startup "PrismLauncher"
 spawn-at-startup "steam"
 spawn-at-startup "spotify"
