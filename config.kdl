@@ -229,8 +229,8 @@ hotkey-overlay {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Q hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Alt+R hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
+    // Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+R hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
     Mod+E hotkey-overlay-title="Open Nautilus" { spawn "nautilus"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
