@@ -238,12 +238,10 @@ binds {
     Mod+Ctrl+Delete { spawn "~/Scripts/Niri/focused.sh"; }
     Mod+T { spawn "~/Scripts/translate-simple.sh"; }
     Mod+Shift+T { spawn "~/Scripts/translate.sh"; }
-		Ctrl+BackSlash { spawn "~/Scripts/time.sh"; }
-		Ctrl+Shift+E { spawn "~/Scripts/record.sh"; }
-		Ctrl+Shift+s { spawn "~/Scripts/togglereplay.sh"; }
-		BackSlash { spawn "~/Scripts/replay.sh"; }
-
-
+		// Ctrl+BackSlash { spawn "~/Scripts/time.sh"; } // Please add a damn waybar config myself
+		Shift+Prior { spawn "~/Scripts/record.sh"; }
+		Shift+Next { spawn "~/Scripts/togglereplay.sh"; }
+		Ctrl+BackSlash { spawn "~/Scripts/replay.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
