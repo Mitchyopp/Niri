@@ -73,7 +73,7 @@ layout {
     }
 }
 
-spawn-at-startup "obs-studio"
+spawn-at-startup "obs"
 spawn-at-startup "zen-browser"
 spawn-at-startup "mako"
 spawn-at-startup "prismlauncher" // test
@@ -81,8 +81,8 @@ spawn-at-startup "steam"
 spawn-at-startup "spotify"
 spawn-at-startup "vesktop"
 // spawn-at-startup "waybar"
-spawn-at-startup "xwayland-satellite"
-spawn-at-startup "swww init"
+spawn-at-startup "xwayland-satellite" // Might not need this after niri 25.08?
+spawn-at-startup "swww init" // could move to startup.sh
 spawn-at-startup "~/Scripts/startup.sh"
 spawn-at-startup "pactl set-card-profile bluez_card.00_A4_1C_40_CA_57 a2dp-sink"
 spawn-at-startup "fcitx5 -d &"
@@ -175,7 +175,7 @@ window-rule {
 window-rule {
   match app-id="ghostty"
   open-floating true
-  opacity 0.95
+  // opacity 0.95
 }
 
 window-rule {
@@ -211,7 +211,7 @@ window-rule {
     open-floating true
 }
 
-/-window-rule {
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
     block-out-from "screen-capture"
