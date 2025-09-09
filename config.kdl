@@ -76,7 +76,7 @@ layout {
 spawn-at-startup "obs"
 spawn-at-startup "zen-browser"
 spawn-at-startup "mako"
-spawn-at-startup "prismlauncher" // test
+spawn-at-startup "prismlauncher"
 spawn-at-startup "steam"
 spawn-at-startup "spotify"
 spawn-at-startup "vesktop"
