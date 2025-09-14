@@ -200,6 +200,11 @@ window-rule {
 }
 
 window-rule {
+	match app-id="anki"
+	open-maximized true
+}
+
+window-rule {
   match app-id="com.obsproject.Studio"
   open-on-workspace "recording"
   open-maximized true
