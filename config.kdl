@@ -75,14 +75,16 @@ layout {
 
 spawn-at-startup "obs"
 spawn-at-startup "zen-browser"
-spawn-at-startup "mako"
+// spawn-at-startup "mako"
 spawn-at-startup "prismlauncher"
 spawn-at-startup "steam"
 spawn-at-startup "spotify"
 spawn-at-startup "vesktop"
 // spawn-at-startup "waybar"
+spawn-at-startup "dms" "run"
+spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 spawn-at-startup "xwayland-satellite" // Might not need this after niri 25.08?
-spawn-at-startup "swww init" // could move to startup.sh
+// spawn-at-startup "swww init" // could move to startup.sh
 spawn-at-startup "~/Scripts/startup.sh"
 spawn-at-startup "pactl set-card-profile bluez_card.00_A4_1C_40_CA_57 a2dp-sink"
 spawn-at-startup "fcitx5 -d &"
@@ -257,10 +259,60 @@ binds {
 		Shift+Next { spawn "~/Scripts/togglereplay.sh"; }
 		Ctrl+BackSlash { spawn "~/Scripts/replay.sh"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+		// https://github.com/AvengeMedia/DankMaterialShell?tab=readme-ov-file#installation
+
+		Mod+Comma hotkey-overlay-title="Clipboard manager" {
+			spawn "dms" "ipc" "call" "clipboard" "toggle"
+		}
+
+		Mod+M hotkey-overlay-title="Task manager" {
+			spawn "dms" "ipc" "call" "processlist" "toggle"
+		}
+
+		Mod+Return hotkey-overlay-title="Notification manager" {
+			spawn "dms" "ipc" "call" "notifications" "toggle"
+		}
+
+		Mod+P hotkey-overlay-title="Note manager" {
+			spawn "dms" "ipc" "call" "notepad" "toggle"
+		}
+
+		Ctrl+Shift+L hotkey-overlay-title="Lock manager" {
+			spawn "dms" "ipc" "call" "lock" "lock"
+		}
+
+		Ctrl+Shift+N hotkey-overlay-title="Night manager" {
+			spawn "dms" "ipc" "call" "night" "toggle"
+		}
+
+		Ctrl+Shift+S hotkey-overlay-title="Setting manager" {
+			spawn "dms" "ipc" "call" "settings" "toggle"
+		}
+
+		Mod+Shift+W hotkey-overlay-title="Wallpaper manager" {
+			spawn "dms" "ipc" "call" "file" "browse" "wallpaper"
+		}
+
+		XF86AudioRaiseVolume allow-when-locked=true {
+      spawn "dms" "ipc" "call" "audio" "increment" "5";
+    }
+
+		XF86AudioLowerVolume allow-when-locked=true {
+			spawn "dms" "ipc" "call" "audio" "decrement" "5";
+		}
+
+		XF86AudioMute allow-when-locked=true {
+			spawn "dms" "ipc" "call" "audio" "mute";
+		}
+
+		XF86AudioMicMute allow-when-locked=true {
+			spawn "dms" "ipc" "call" "audio" "micmute";
+		}
+
+    // XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    // XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    // XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    // XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
     Mod+Prior { spawn "playerctl" "--player=spotify" "previous"; }
     Mod+Next { spawn "playerctl" "--player=spotify" "play-pause"; }
     Mod+End { spawn "playerctl" "--player=spotify" "next"; }
@@ -268,7 +320,7 @@ binds {
     Mod+BackSlash { spawn "~/Scripts/spotify.sh"; }
     Mod+Shift+3 { spawn "notify-send" "hi"; }
     Mod+Shift+1 { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
-    Mod+Shift+W { spawn "waypaper"; }
+    // Mod+Shift+W { spawn "waypaper"; }
     Mod+O repeat=false { toggle-overview; }
     Mod+C { close-window; }
     Mod+Left  { focus-column-left; }
@@ -347,7 +399,7 @@ binds {
     Mod+Ctrl+9 { move-column-to-workspace 9; }
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
-    Mod+Comma  { consume-window-into-column; }
+    // Mod+Comma  { consume-window-into-column; }
     Mod+Period { expel-window-from-column; }
     Mod+D { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
