@@ -18,8 +18,8 @@ input {
     trackpoint {
     }
 
-    focus-follows-mouse
-    warp-mouse-to-focus mode="center-xy"
+    // focus-follows-mouse
+    // warp-mouse-to-focus mode="center-xy"
 }
 
 output "DP-2" {
@@ -154,7 +154,7 @@ window-rule {
 
 window-rule {
   match app-id="zen" title="YouTube"
-  block-out-from "screen-capture"
+  // block-out-from "screen-capture"
 }
 
 window-rule {
