@@ -88,7 +88,7 @@ spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 spawn-at-startup "xwayland-satellite" // Might not need this after niri 25.08?
 // spawn-at-startup "swww init" // could move to startup.sh
 spawn-at-startup "~/Scripts/startup.sh"
-spawn-at-startup "pactl set-card-profile bluez_card.00_A4_1C_40_CA_57 a2dp-sink"
+spawn-at-startup "/home/Mitchy/Scripts/startup.sh"
 spawn-at-startup "fcitx5 -d &"
 spawn-at-startup "elephant"
 
