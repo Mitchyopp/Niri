@@ -75,6 +75,8 @@ layout {
 
 spawn-at-startup "obs"
 spawn-at-startup "zen-browser"
+spawn-at-startup "zen"
+spawn-at-startup "zen-twilight"
 // spawn-at-startup "mako"
 spawn-at-startup "prismlauncher"
 spawn-at-startup "steam"
@@ -146,7 +148,7 @@ window-rule {
 }
 
 window-rule {
-  match app-id="zen"
+  match app-id="zen-twilight"
   open-on-workspace "browser"
   //block-out-from "screen-capture"
   open-maximized true
