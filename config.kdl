@@ -74,7 +74,7 @@ layout {
 }
 
 spawn-at-startup "obs"
-spawn-at-startup "zen-browser"
+// spawn-at-startup "zen-browser"
 spawn-at-startup "zen"
 spawn-at-startup "zen-twilight"
 // spawn-at-startup "mako"
@@ -129,6 +129,9 @@ workspace "games" {
 workspace "music" {
   open-on-output "DP-2"
 }
+workspace "zoom" {
+  open-on-output "DP-2"
+}
 workspace "chatting" {
   open-on-output "DP-3"
 }
@@ -174,6 +177,12 @@ window-rule {
 window-rule {
   match app-id="Spotify"
   open-on-workspace "music"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="zoom"
+  open-on-workspace "zoom"
   open-maximized true
 }
 
@@ -251,6 +260,10 @@ binds {
     Mod+R hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
     Mod+E hotkey-overlay-title="Open Nautilus" { spawn "nautilus"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+
+		// scripts
+		Ctrl+E { spawn "~/Scripts/ocr-clipboard.sh"; }
+		Ctrl+Shift+E { spawn "~/Scripts/ocr-select.sh"; }
 
     // Custom script
     Mod+Ctrl+Delete { spawn "~/Scripts/Niri/focused.sh"; }
