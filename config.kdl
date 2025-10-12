@@ -73,8 +73,7 @@ layout {
     }
 }
 
-spawn-at-startup "obs"
-// spawn-at-startup "zen-browser"
+// spawn-at-startup "obs"
 spawn-at-startup "zen"
 spawn-at-startup "zen-twilight"
 // spawn-at-startup "mako"
