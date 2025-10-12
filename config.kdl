@@ -75,6 +75,7 @@ layout {
 
 // spawn-at-startup "obs"
 spawn-at-startup "zen"
+spawn-at-startup "obsidian"
 spawn-at-startup "zen-twilight"
 // spawn-at-startup "mako"
 spawn-at-startup "prismlauncher"
@@ -129,6 +130,9 @@ workspace "music" {
   open-on-output "DP-2"
 }
 workspace "zoom" {
+  open-on-output "DP-2"
+}
+workspace "notes" {
   open-on-output "DP-2"
 }
 workspace "chatting" {
@@ -202,6 +206,12 @@ window-rule {
   open-on-workspace "chatting"
   open-maximized true
   opacity 0.95
+}
+
+window-rule {
+  match app-id="obsidian"
+  open-on-workspace "notes"
+  open-maximized true
 }
 
 window-rule {
@@ -287,9 +297,9 @@ binds {
 			spawn "dms" "ipc" "call" "notifications" "toggle"
 		}
 
-		Mod+P hotkey-overlay-title="Note manager" {
-			spawn "dms" "ipc" "call" "notepad" "toggle"
-		}
+		// Mod+P hotkey-overlay-title="Note manager" {
+		// 	spawn "dms" "ipc" "call" "notepad" "toggle"
+		// }
 
 		Ctrl+Shift+L hotkey-overlay-title="Lock manager" {
 			spawn "dms" "ipc" "call" "lock" "lock"
@@ -402,6 +412,7 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
+		Mod+P { spawn-sh "niri msg action focus-workspace notes"; }
     Mod+Ctrl+1 { move-column-to-workspace 1; }
     Mod+Ctrl+2 { move-column-to-workspace 2; }
     Mod+Ctrl+3 { move-column-to-workspace 3; }
