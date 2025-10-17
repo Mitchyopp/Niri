@@ -132,14 +132,13 @@ workspace "music" {
 workspace "zoom" {
   open-on-output "DP-2"
 }
-workspace "notes" {
-  open-on-output "DP-2"
-}
 workspace "chatting" {
   open-on-output "DP-3"
 }
-
 workspace "recording" {
+  open-on-output "DP-3"
+}
+workspace "notes" {
   open-on-output "DP-3"
 }
 
