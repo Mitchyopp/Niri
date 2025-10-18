@@ -45,28 +45,24 @@ layout {
 
     default-column-width { proportion 0.5; }
     focus-ring {
-        width 3
-        //active-color "#9e09de"
-        //inactive-color "#505050"
-        active-gradient from="#f29ecb" to="#ffffff" angle=90
-        urgent-color "#ff4e78"
+      width 4
+      active-gradient from="#000000" to="#1a1a1a" angle=90
+      inactive-gradient from="#2a2a2d" to="#3a3a3d" angle=90
+      urgent-color "#8b0000"
     }
 
     border {
-				off
-        width 2
-        // active-color "#ffc87f"
-        // inactive-color "#505050"
-        active-gradient from="#f29ecb" to="#ffffff" angle=90
-        urgent-color "#9b0000"
+      width 3
+      active-gradient from="#1b1b1f" to="#2b2b2f" angle=90
+      inactive-gradient from="#232326" to="#2c2c30" angle=90
+      urgent-color "#7a0000"
     }
 
     shadow {
-        on
-        softness 30
-        spread 5
-        offset x=0 y=5
-        color "#0007"
+      softness 28
+      spread 5
+      offset x=0 y=6
+      color "#00000070"
     }
 
     struts {
