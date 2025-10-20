@@ -440,7 +440,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
     Mod+V       { toggle-window-floating; }
     // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
-    V { switch-focus-between-floating-and-tiling; }
+    Ctrl+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
     Mod+Delete { screenshot; }
 		Mod+Shift+Delete { spawn "~/Scripts/satty.sh"; }
