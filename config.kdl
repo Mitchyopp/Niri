@@ -206,7 +206,7 @@ window-rule {
 window-rule {
   match app-id="obsidian"
   open-on-workspace "notes"
-  open-maximized true
+  open-fullscreen true
 }
 
 window-rule {
@@ -276,7 +276,8 @@ binds {
 		// Ctrl+BackSlash { spawn "~/Scripts/time.sh"; } // Please add a damn waybar config myself
 		Shift+Prior { spawn "~/Scripts/record.sh"; }
 		Shift+Next { spawn "~/Scripts/togglereplay.sh"; }
-		Ctrl+BackSlash { spawn "~/Scripts/replay.sh"; }
+		// Ctrl+BackSlash { spawn "~/Scripts/replay.sh"; }
+    Ctrl+BackSlash { spawn-sh "pkill -SIGUSR1 -f gpu-screen-recorder"; }
 
 		// https://github.com/AvengeMedia/DankMaterialShell?tab=readme-ov-file#installation
 
