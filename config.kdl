@@ -352,6 +352,9 @@ binds {
     Mod+J     { focus-window-down; }
     Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
+    // Down { move-workspace-down; }
+    // Up { focus-workspace-up; }
+    Alt+Right     { focus-column-right; }
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
     Mod+Ctrl+Up    { move-window-up; }
@@ -436,7 +439,8 @@ binds {
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
     Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
     Mod+Delete { screenshot; }
 		Mod+Shift+Delete { spawn "~/Scripts/satty.sh"; }
