@@ -85,6 +85,7 @@ spawn-at-startup "~/Scripts/startup.sh"
 spawn-at-startup "/home/Mitchy/Scripts/startup.sh"
 spawn-at-startup "fcitx5 -d &"
 spawn-at-startup "elephant"
+spawn-at-startup "niriusd"
 
 environment {
   DISPLAY ":0"
@@ -262,6 +263,10 @@ binds {
     Ctrl+Space hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
     Mod+E hotkey-overlay-title="Open Nautilus" { spawn "nautilus"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+
+    // nirius
+    Mod+Ctrl+S { spawn-sh "nirius scratchpad-toggle"; }
+    Mod+Ctrl+P { spawn-sh "nirius toggle-follow-mode"; }
 
 		// scripts
 		Ctrl+E { spawn "~/Scripts/ocr-clipboard.sh"; }
