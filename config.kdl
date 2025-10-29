@@ -265,7 +265,8 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // nirius
-    Mod+Ctrl+S { spawn-sh "nirius scratchpad-toggle"; }
+    Mod+Ctrl+T { spawn-sh "nirius scratchpad-toggle"; }
+    Mod+Ctrl+S { spawn-sh "nirius scratchpad-show"; }
     Mod+Ctrl+P { spawn-sh "nirius toggle-follow-mode"; }
 
 		// scripts
