@@ -35,7 +35,7 @@ output "DP-3" {
 }
 
 layout {
-    gaps 12
+    gaps 4
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -69,8 +69,7 @@ layout {
     }
 }
 
-// spawn-at-startup "obs"
-spawn-at-startup "zen"
+spawn-at-startup "obs"
 spawn-at-startup "obsidian"
 spawn-at-startup "zen-twilight"
 spawn-at-startup "prismlauncher"
@@ -82,10 +81,10 @@ spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 spawn-at-startup "xwayland-satellite" // Might not need this after niri 25.08?
 // spawn-at-startup "swww init" // could move to startup.sh
 spawn-at-startup "~/Scripts/startup.sh"
-spawn-at-startup "/home/Mitchy/Scripts/startup.sh"
 spawn-at-startup "fcitx5 -d &"
 spawn-at-startup "elephant"
 spawn-at-startup "niriusd"
+spawn-at-startup "ollama" "serve"
 
 environment {
   DISPLAY ":0"
@@ -260,7 +259,7 @@ binds {
     // Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     // Mod+R hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
     // Mod+R hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
-    Ctrl+Space hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
+    Mod+R hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
     Mod+E hotkey-overlay-title="Open Nautilus" { spawn "nautilus"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
@@ -442,8 +441,8 @@ binds {
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
     Mod+V       { toggle-window-floating; }
-    // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
-    Alt+V { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    // Alt+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
     Mod+Delete { screenshot; }
 		Mod+Shift+Delete { spawn "~/Scripts/satty.sh"; }
