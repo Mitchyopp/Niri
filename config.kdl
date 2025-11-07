@@ -263,6 +263,11 @@ binds {
     Mod+E hotkey-overlay-title="Open Nautilus" { spawn "nautilus"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
+    // OBS
+    Shift+Prior { spawn-sh "obs-cmd recording toggle"; }
+    Shift+Next { spawn-sh "obs-cmd replay toggle"; }
+    Ctrl+BackSlash { spawn-sh "obs-cmd replay save"; }
+
     // nirius
     Mod+Ctrl+T { spawn-sh "nirius scratchpad-toggle"; }
     Mod+Ctrl+S { spawn-sh "nirius scratchpad-show"; }
@@ -276,11 +281,6 @@ binds {
     Mod+Ctrl+Delete { spawn "~/Scripts/Niri/focused.sh"; }
     Mod+T { spawn "~/Scripts/translate-simple.sh"; }
     Mod+Shift+T { spawn "~/Scripts/translate.sh"; }
-		// Ctrl+BackSlash { spawn "~/Scripts/time.sh"; } // Please add a damn waybar config myself
-		Shift+Prior { spawn "~/Scripts/record.sh"; }
-		Shift+Next { spawn "~/Scripts/togglereplay.sh"; }
-		// Ctrl+BackSlash { spawn "~/Scripts/replay.sh"; }
-    Ctrl+BackSlash { spawn-sh "pkill -SIGUSR1 -f gpu-screen-recorder"; }
 
 		// https://github.com/AvengeMedia/DankMaterialShell?tab=readme-ov-file#installation
 
