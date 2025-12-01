@@ -1,0 +1,21 @@
+workspace "browser" {
+  open-on-output "DP-2"
+}
+workspace "games" {
+  open-on-output "DP-2"
+}
+workspace "music" {
+  open-on-output "DP-2"
+}
+workspace "zoom" {
+  open-on-output "DP-2"
+}
+workspace "chatting" {
+  open-on-output "DP-3"
+}
+workspace "recording" {
+  open-on-output "DP-3"
+}
+workspace "notes" {
+  open-on-output "DP-3"
+}

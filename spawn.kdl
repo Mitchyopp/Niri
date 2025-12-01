@@ -1,0 +1,16 @@
+spawn-at-startup "obs"
+spawn-at-startup "obsidian"
+spawn-at-startup "zen-twilight"
+spawn-at-startup "prismlauncher"
+spawn-at-startup "steam"
+spawn-at-startup "spotify"
+spawn-at-startup "vesktop"
+spawn-at-startup "dms" "run"
+spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
+spawn-at-startup "xwayland-satellite" // Might not need this after niri 25.08?
+// spawn-at-startup "swww init" // could move to startup.sh
+spawn-at-startup "~/Scripts/startup.sh"
+spawn-at-startup "fcitx5 -d &"
+spawn-at-startup "elephant"
+spawn-at-startup "niriusd"
+spawn-at-startup "ollama" "serve"

@@ -1,0 +1,20 @@
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+input {
+    keyboard {
+        xkb {
+            layout "us"
+        }
+    }
+
+    touchpad {
+    }
+
+    mouse {
+    }
+
+    trackpoint {
+    }
+
+    // focus-follows-mouse
+    // warp-mouse-to-focus mode="center-xy"
+}

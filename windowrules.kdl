@@ -1,0 +1,113 @@
+window-rule {
+  match app-id=r#"^org\.wezfurlong\.wezterm$"#
+  default-column-width { proportion 0.5; }
+}
+
+window-rule {
+  match is-active=false
+  opacity 0.98
+}
+
+window-rule {
+  match app-id="zen-twilight"
+  open-on-workspace "browser"
+  //block-out-from "screen-capture"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="zen" title="YouTube"
+  // block-out-from "screen-capture"
+}
+
+window-rule {
+  match app-id="PrismLauncher"
+  open-on-workspace "games"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="steam"
+  open-on-workspace "games"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="Spotify"
+  open-on-workspace "music"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="zoom"
+  open-on-workspace "zoom"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="ghostty"
+  open-floating true
+  // opacity 0.95
+}
+
+window-rule {
+  match app-id="Nautilus"
+  open-floating true
+  block-out-from "screencast"
+}
+
+window-rule {
+  match app-id="vesktop"
+  open-on-workspace "chatting"
+  open-maximized true
+  opacity 0.95
+}
+
+window-rule {
+  match app-id="obsidian"
+  open-on-workspace "notes"
+  open-fullscreen true
+}
+
+window-rule {
+	match app-id="Ferdium"
+	open-on-workspace "chatting"
+	open-maximized true
+	opacity 1.0
+}
+
+window-rule {
+	match app-id="anki"
+	open-maximized true
+}
+
+window-rule {
+  match app-id="com.obsproject.Studio"
+  open-on-workspace "recording"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="superProductivity"
+  open-maximized true
+}
+
+window-rule {
+  match app-id="waypaper"
+  open-floating true
+}
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screen-capture"
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}

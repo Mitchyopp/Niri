@@ -1,0 +1,18 @@
+animations {
+	off
+  workspace-switch {
+      spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+  }
+
+  horizontal-view-movement {
+      spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+  }
+
+  window-movement {
+      spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+  }
+
+  window-resize {
+      spring damping-ratio=1.15 stiffness=850 epsilon=0.0001
+  }
+}
