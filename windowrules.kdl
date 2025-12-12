@@ -108,6 +108,11 @@ window-rule {
 }
 
 window-rule {
+  match app-id="org.vinegarhq.Sober"
+  open-maximized true
+}
+
+window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
