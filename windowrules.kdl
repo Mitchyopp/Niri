@@ -46,7 +46,7 @@ window-rule {
 
 window-rule {
   match app-id="ghostty"
-  open-floating true
+  // open-floating true
   // opacity 0.95
 }
 
