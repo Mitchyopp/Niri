@@ -113,6 +113,11 @@ window-rule {
 }
 
 window-rule {
+  match app-id="org.quickshell"
+  open-floating true
+}
+
+window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
