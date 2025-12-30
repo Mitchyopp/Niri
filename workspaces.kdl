@@ -19,3 +19,6 @@ workspace "recording" {
 workspace "notes" {
   open-on-output "DP-3"
 }
+workspace "anki" {
+  open-on-output "DP-3"
+}
