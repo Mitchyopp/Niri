@@ -60,7 +60,7 @@ window-rule {
   match app-id="vesktop"
   open-on-workspace "chatting"
   open-maximized true
-  opacity 0.95
+  // opacity 0.95
 }
 
 window-rule {
@@ -79,6 +79,7 @@ window-rule {
 window-rule {
 	match app-id="anki"
 	open-maximized true
+  open-on-workspace "anki"
 }
 
 window-rule {
@@ -109,7 +110,7 @@ window-rule {
 
 window-rule {
   match app-id="org.vinegarhq.Sober"
-  open-maximized true
+  open-fullscreen true
 }
 
 window-rule {
@@ -118,16 +119,11 @@ window-rule {
 }
 
 window-rule {
-  match app-id="anki"
-  open-on-workspace "anki"
-}
-
-window-rule {
   match app-id="mpv"
   open-fullscreen true
 }
 
-window-rule {
+/-window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }

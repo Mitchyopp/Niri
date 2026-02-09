@@ -91,6 +91,10 @@ binds {
     Mod+BackSlash { spawn "~/Scripts/spotify.sh"; }
     Mod+Shift+3 { spawn "notify-send" "hi"; }
     Mod+Shift+1 { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
+
+    // wlr
+    Mod+Space { spawn "wlr-which-key"; }
+
     // Mod+Shift+W { spawn "waypaper"; }
     Mod+O repeat=false { toggle-overview; }
     Mod+C { close-window; }
@@ -162,7 +166,7 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-		Mod+P { spawn-sh "niri msg action focus-workspace notes"; }
+    Mod+P { spawn-sh "niri msg action focus-workspace notes"; }
     Mod+Ctrl+1 { move-column-to-workspace 1; }
     Mod+Ctrl+2 { move-column-to-workspace 2; }
     Mod+Ctrl+3 { move-column-to-workspace 3; }
