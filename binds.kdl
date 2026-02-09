@@ -6,11 +6,8 @@ binds {
     // Mod+R hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
     Mod+Return hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
     Mod+E hotkey-overlay-title="Open Nautilus" { spawn "nautilus"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // OBS
-    Shift+Prior { spawn-sh "obs-cmd recording toggle"; }
-    Shift+Next { spawn-sh "obs-cmd replay toggle"; }
     Ctrl+BackSlash { spawn-sh "obs-cmd replay save"; }
 
     // AGS
@@ -21,64 +18,64 @@ binds {
     Mod+Ctrl+S { spawn-sh "nirius scratchpad-show"; }
     Mod+Ctrl+P { spawn-sh "nirius toggle-follow-mode"; }
 
-		// scripts
-		Ctrl+E { spawn "~/Scripts/ocr-clipboard.sh"; }
-		Ctrl+Shift+E { spawn "~/Scripts/ocr-select.sh"; }
+    // scripts
+    Ctrl+E { spawn "~/Scripts/ocr-clipboard.sh"; }
+    Ctrl+Shift+E { spawn "~/Scripts/ocr-select.sh"; }
 
     // Custom script
     Mod+Ctrl+Delete { spawn "~/Scripts/Niri/focused.sh"; }
     Mod+T { spawn "~/Scripts/translate-simple.sh"; }
     Mod+Shift+T { spawn "~/Scripts/translate.sh"; }
 
-		// https://github.com/AvengeMedia/DankMaterialShell?tab=readme-ov-file#installation
+    // https://github.com/AvengeMedia/DankMaterialShell?tab=readme-ov-file#installation
 
-		Mod+Comma hotkey-overlay-title="Clipboard manager" {
-			spawn "dms" "ipc" "call" "clipboard" "toggle"
-		}
+    Mod+Comma hotkey-overlay-title="Clipboard manager" {
+        spawn "dms" "ipc" "call" "clipboard" "toggle"
+    }
 
-		Mod+M hotkey-overlay-title="Task manager" {
-			spawn "dms" "ipc" "call" "processlist" "toggle"
-		}
+    Mod+M hotkey-overlay-title="Task manager" {
+        spawn "dms" "ipc" "call" "processlist" "toggle"
+    }
 
-		Mod+R hotkey-overlay-title="Notification manager" {
-			spawn "dms" "ipc" "call" "notifications" "toggle"
-		}
+    Mod+R hotkey-overlay-title="Notification manager" {
+        spawn "dms" "ipc" "call" "notifications" "toggle"
+    }
 
-		// Mod+P hotkey-overlay-title="Note manager" {
-		// 	spawn "dms" "ipc" "call" "notepad" "toggle"
-		// }
+    // Mod+P hotkey-overlay-title="Note manager" {
+    // 	spawn "dms" "ipc" "call" "notepad" "toggle"
+    // }
 
-		Ctrl+Shift+L hotkey-overlay-title="Lock manager" {
-			spawn "dms" "ipc" "call" "lock" "lock"
-		}
+    Ctrl+Shift+L hotkey-overlay-title="Lock manager" {
+        spawn "dms" "ipc" "call" "lock" "lock"
+    }
 
-		Ctrl+Shift+N hotkey-overlay-title="Night manager" {
-			spawn "dms" "ipc" "call" "night" "toggle"
-		}
+    Ctrl+Shift+N hotkey-overlay-title="Night manager" {
+        spawn "dms" "ipc" "call" "night" "toggle"
+    }
 
-		Ctrl+Shift+S hotkey-overlay-title="Setting manager" {
-			spawn "dms" "ipc" "call" "settings" "toggle"
-		}
+    Ctrl+Shift+S hotkey-overlay-title="Setting manager" {
+        spawn "dms" "ipc" "call" "settings" "toggle"
+    }
 
-		Mod+Shift+W hotkey-overlay-title="Wallpaper manager" {
-			spawn "dms" "ipc" "call" "file" "browse" "wallpaper"
-		}
+    Mod+Shift+W hotkey-overlay-title="Wallpaper manager" {
+        spawn "dms" "ipc" "call" "file" "browse" "wallpaper"
+    }
 
-		XF86AudioRaiseVolume allow-when-locked=true {
+    XF86AudioRaiseVolume allow-when-locked=true {
       spawn "dms" "ipc" "call" "audio" "increment" "5";
     }
 
-		XF86AudioLowerVolume allow-when-locked=true {
-			spawn "dms" "ipc" "call" "audio" "decrement" "5";
-		}
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn "dms" "ipc" "call" "audio" "decrement" "5";
+    }
 
-		XF86AudioMute allow-when-locked=true {
-			spawn "dms" "ipc" "call" "audio" "mute";
-		}
+    XF86AudioMute allow-when-locked=true {
+        spawn "dms" "ipc" "call" "audio" "mute";
+    }
 
-		XF86AudioMicMute allow-when-locked=true {
-			spawn "dms" "ipc" "call" "audio" "micmute";
-		}
+    XF86AudioMicMute allow-when-locked=true {
+        spawn "dms" "ipc" "call" "audio" "micmute";
+    }
 
     // XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     // XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
@@ -87,13 +84,10 @@ binds {
     Mod+Prior { spawn "playerctl" "--player=spotify" "previous"; }
     Mod+Next { spawn "playerctl" "--player=spotify" "play-pause"; }
     Mod+End { spawn "playerctl" "--player=spotify" "next"; }
-    Mod+BackSpace { spawn "~/.config/hypr/Scripts/spotify_position.sh"; }
-    Mod+BackSlash { spawn "~/Scripts/spotify.sh"; }
-    Mod+Shift+3 { spawn "notify-send" "hi"; }
     Mod+Shift+1 { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
 
     // wlr
-    Mod+Space { spawn "wlr-which-key"; }
+    Ctrl+Return { spawn "wlr-which-key"; }
 
     // Mod+Shift+W { spawn "waypaper"; }
     Mod+O repeat=false { toggle-overview; }
@@ -197,7 +191,7 @@ binds {
     // Alt+V { switch-focus-between-floating-and-tiling; }
     Mod+W { toggle-column-tabbed-display; }
     Mod+Delete { screenshot; }
-		Mod+Shift+Delete { spawn "~/Scripts/satty.sh"; }
+    Mod+Shift+Delete { spawn "~/Scripts/satty.sh"; }
     Mod+tab { screenshot-screen; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     // Mod+Shift+E { quit; }
