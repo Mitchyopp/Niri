@@ -9,15 +9,15 @@ window-rule {
 }
 
 window-rule {
-  match app-id="zen-twilight"
+  match app-id="zen"
   open-on-workspace "browser"
   //block-out-from "screen-capture"
   open-maximized true
 }
 
 window-rule {
-  match app-id="zen" title="YouTube"
-  // block-out-from "screen-capture"
+  match app-id="zen" title="Vaultwarden"
+  block-out-from "screen-capture"
 }
 
 window-rule {
@@ -33,7 +33,7 @@ window-rule {
 }
 
 window-rule {
-  match app-id="Spotify"
+  match app-id="spotify"
   open-on-workspace "music"
   open-maximized true
 }
@@ -66,7 +66,7 @@ window-rule {
 window-rule {
   match app-id="obsidian"
   open-on-workspace "notes"
-  open-fullscreen true
+  open-maximized true
 }
 
 window-rule {
@@ -110,7 +110,7 @@ window-rule {
 
 window-rule {
   match app-id="org.vinegarhq.Sober"
-  open-fullscreen true
+  open-maximized true
 }
 
 window-rule {
