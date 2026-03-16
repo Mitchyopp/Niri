@@ -9,3 +9,9 @@ screenshot-path "~/Media/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 hotkey-overlay {
   skip-at-startup
 }
+
+cursor {
+    // xcursor-theme "Bibata-Modern-Amber"
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
+}
