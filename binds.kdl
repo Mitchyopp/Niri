@@ -85,6 +85,7 @@ binds {
     Mod+Next { spawn "playerctl" "--player=spotify" "play-pause"; }
     Mod+End { spawn "playerctl" "--player=spotify" "next"; }
     Mod+Shift+1 { spawn "sh" "-c" "grim -g \"$(slurp)\" - | swappy -f -"; }
+    Ctrl+Down { spawn-sh "pkill -SIGUSR1 wayscriber"; }
 
     // wlr
     Ctrl+Return { spawn "wlr-which-key"; }
