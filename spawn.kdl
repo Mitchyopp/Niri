@@ -13,7 +13,7 @@ spawn-at-startup "xwayland-satellite" // Might not need this after niri 25.08?
 spawn-at-startup "~/Scripts/startup.sh"
 spawn-at-startup "fcitx5 -d &"
 // spawn-at-startup "elephant"
-spawn-at-startup "walker --gapplication-service"
+// spawn-at-startup "walker --gapplication-service"
 spawn-at-startup "niriusd"
 spawn-at-startup "ollama" "serve"
 spawn-at-startup "mullvad" "connect"
