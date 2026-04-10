@@ -110,7 +110,7 @@ window-rule {
 
 window-rule {
   match app-id="org.vinegarhq.Sober"
-  open-maximized true
+  open-fullscreen true
 }
 
 window-rule {
