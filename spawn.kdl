@@ -11,11 +11,12 @@ spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
 // spawn-at-startup "xwayland-satellite" // Might not need this after niri 25.08?
 // spawn-at-startup "swww init" // could move to startup.sh
 spawn-at-startup "~/Scripts/startup.sh"
-spawn-at-startup "fcitx5 -d &"
+// spawn-at-startup "fcitx5 -d &"
 spawn-at-startup "elephant"
 // spawn-at-startup "walker --gapplication-service"
 spawn-at-startup "niriusd"
-spawn-at-startup "ollama" "serve"
+// spawn-at-startup "ollama" "serve"
+spawn-at-startup "OLLAMA_HOST=0.0.0.0:11434" "ollama" "serve"
 spawn-at-startup "mullvad" "connect"
 spawn-at-startup "nirinit"
 spawn-at-startup "anki"
@@ -23,6 +24,7 @@ spawn-at-startup "pipewire"
 spawn-at-startup "wireplumber"
 spawn-at-startup "pipewire-pulse"
 spawn-at-startup "rfkill" "unblock" "all"
+spawn-at-startup "rclone" "mount" "nextcloud:" "/home/Mitch/Cloud" "--vfs-cache-mode" "full" "--daemon"
 
 xwayland-satellite {
     // optional, but explicit:

@@ -23,7 +23,7 @@ binds {
     Ctrl+Shift+E { spawn "~/Scripts/ocr-select.sh"; }
 
     // Custom script
-    Mod+Ctrl+Delete { spawn "~/Scripts/Niri/focused.sh"; }
+    Mod+Ctrl+Delete { spawn "~/Scripts/focus.sh"; }
     Mod+T { spawn "~/Scripts/translate-simple.sh"; }
     Mod+Shift+T { spawn "~/Scripts/translate.sh"; }
 
