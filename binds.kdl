@@ -11,12 +11,12 @@ binds {
     Ctrl+BackSlash { spawn-sh "obs-cmd replay save"; }
 
     // AGS
-    Ctrl+9 { spawn-sh "astal -i ags -t warning"; }
+    // Ctrl+9 { spawn-sh "astal -i ags -t warning"; }
 
     // nirius
-    Mod+Ctrl+T { spawn-sh "nirius scratchpad-toggle"; }
-    Mod+Ctrl+S { spawn-sh "nirius scratchpad-show"; }
-    Mod+Ctrl+P { spawn-sh "nirius toggle-follow-mode"; }
+    // Mod+Ctrl+T { spawn-sh "nirius scratchpad-toggle"; }
+    // Mod+Ctrl+S { spawn-sh "nirius scratchpad-show"; }
+    // Mod+Ctrl+P { spawn-sh "nirius toggle-follow-mode"; }
 
     // scripts
     Ctrl+E { spawn "~/Scripts/ocr-clipboard.sh"; }
